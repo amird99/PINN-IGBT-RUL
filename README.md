@@ -120,10 +120,9 @@ bundles the weights **with** the input scaler and config needed to reuse them.
 ## Expected results
 
 ![LODO predictions](results/figures/lodo_predictions.png)
-<!-- TODO: copy results/pinn_lodo/predictions.png to results/figures/lodo_predictions.png after a fresh run. -->
 
-Out-of-sample test MSE (×10⁻³). *Paper* columns are copied from Table 2 of the paper (reported by the authors, **not reproduced here**);
-fill *This repo* from `results/*/metrics.json`, ideally as mean ± std over ≥ 5 seeds.
+
+Out-of-sample test MSE (×10⁻³). *Paper* columns are copied from Table 2 of the paper:
 
 | Test device | Paper RNN | Paper PI-RNN | This repo: baseline | This repo: PINN |
 |---|---|---|---|---|
