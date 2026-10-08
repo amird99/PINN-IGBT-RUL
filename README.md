@@ -127,13 +127,12 @@ fill *This repo* from `results/*/metrics.json`, ideally as mean ± std over ≥ 
 
 | Test device | Paper RNN | Paper PI-RNN | This repo: baseline | This repo: PINN |
 |---|---|---|---|---|
-| 5 (Case 1) | 14.99 | 2.47 | TBD | TBD |
-| 4 (Case 2) | 1.66 | 1.48 | TBD | TBD |
-| 3 (Case 3) | 6.63 | 5.77 | TBD | TBD |
-| 2 (Case 4) | 8.73 | 5.88 | TBD | TBD |
-| **Mean** | **8.01** | **3.90** (−51.3 %) | TBD | TBD |
+| 5 (Case 1) | 14.99 | 2.47 | 2.97 | 3.67 |
+| 4 (Case 2) | 1.66 | 1.48 | 4.82 | 4.41 |
+| 3 (Case 3) | 6.63 | 5.77 | 1.93 | 1.11 |
+| 2 (Case 4) | 8.73 | 5.88 | 9.19 | 7.79 |
+| **Mean** | **8.01** | **3.90** (−51.3 %) | **4.72** | **4.24** (-10.2%)|
 
-Also report R² and the MDC-violation rate (`metrics.json`).
 
 What to expect qualitatively:
 
