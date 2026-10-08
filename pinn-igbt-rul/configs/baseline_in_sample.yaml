@@ -1,0 +1,8 @@
+# Paper baseline RNN, in-sample (Table 1): all four devices, every 5th window held out.
+# For a single device:  --set data.devices=[Device3]
+# Leakage-free variant: --set data.insample_block_size=20 --set data.insample_purge=9
+base: default.yaml
+name: baseline_in_sample
+split: in_sample
+loss: {name: mse}
+train: {batching: device_sequence}

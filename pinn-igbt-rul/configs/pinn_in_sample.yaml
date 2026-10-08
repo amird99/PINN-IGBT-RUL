@@ -1,0 +1,7 @@
+# Paper PI-RNN, in-sample (Table 1): alpha = 0.1, beta = 1.
+# The training windows keep their time order (the MDC term compares consecutive training samples).
+base: default.yaml
+name: pinn_in_sample
+split: in_sample
+loss: {name: pinn, alpha: 0.1, beta: 1.0, gamma: 0.1}
+train: {batching: device_sequence}

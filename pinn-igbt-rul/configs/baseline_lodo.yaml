@@ -1,0 +1,7 @@
+# Paper baseline (out-of-sample, 4-fold LODO): the PINN loss with alpha = beta = 0, i.e. plain MSE,
+# trained with the same one-ordered-batch-per-device loop as the PINN.
+base: default.yaml
+name: baseline_lodo
+split: lodo
+loss: {name: mse}
+train: {batching: device_sequence}

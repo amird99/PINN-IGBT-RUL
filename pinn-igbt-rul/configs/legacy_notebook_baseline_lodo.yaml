@@ -1,0 +1,9 @@
+# Reproduces the ORIGINAL notebook's LODO baseline: raw cycle means (no standardisation / EMA),
+# ReLU head, shuffled mini-batches of 32. Differs from the paper (see docs/CODE_REVIEW.md C1, C4, C5).
+base: default.yaml
+name: legacy_notebook_baseline_lodo
+split: lodo
+data: {per_device_standardize: false, smoothing: none}
+model: {activation: relu}
+loss: {name: mse}
+train: {batching: minibatch}

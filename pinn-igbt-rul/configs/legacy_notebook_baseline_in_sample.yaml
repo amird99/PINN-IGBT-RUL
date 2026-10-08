@@ -1,0 +1,8 @@
+# Reproduces the ORIGINAL notebook's in-sample baseline, including its unshuffled training loader (CODE_REVIEW M1).
+base: default.yaml
+name: legacy_notebook_baseline_in_sample
+split: in_sample
+data: {per_device_standardize: false, smoothing: none}
+model: {activation: relu}
+loss: {name: mse}
+train: {batching: minibatch, shuffle: false}

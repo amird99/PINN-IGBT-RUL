@@ -1,0 +1,6 @@
+# Reproduces the ORIGINAL notebook's PINN: raw cycle means, ReLU head, beta = 1 (the paper uses 100).
+base: pinn_lodo.yaml
+name: legacy_notebook_pinn_lodo
+data: {per_device_standardize: false, smoothing: none}
+model: {activation: relu}
+loss: {beta: 1.0}

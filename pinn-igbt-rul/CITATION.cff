@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite it as below and cite the original paper."
+title: "pinn-igbt-rul: physics-informed RNN for IGBT remaining useful life"
+authors:
+  - name: "Amirhossein Dadashpour"
+version: 0.1.0
+license: MIT
+repository-code: "https://github.com/amird99/pinn-igbt-rul"
+references:
+  - type: article
+    title: "Remaining useful lifetime estimation for discrete power electronic devices using physics-informed neural network"
+    authors:
+      - {family-names: Lu, given-names: Zhonghai}
+      - {family-names: Guo, given-names: Chao}
+      - {family-names: Liu, given-names: Mingrui}
+      - {family-names: Shi, given-names: Rui}
+    journal: "Scientific Reports"
+    volume: 13
+    start: 10167
+    year: 2023
+    doi: "10.1038/s41598-023-37154-5"
+  - type: dataset
+    title: "IGBT Accelerated Aging Data Set"
+    authors:
+      - {family-names: Celaya, given-names: J.}
+      - {family-names: Wysocki, given-names: Phil}
+      - {family-names: Goebel, given-names: K.}
+    publisher: {name: "NASA Prognostics Data Repository, NASA Ames Research Center, Moffett Field, CA"}
+    year: 2009

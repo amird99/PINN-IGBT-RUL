@@ -1,0 +1,46 @@
+# Every hyper-parameter of the project. Architecture, preprocessing, window and loss form follow
+# Lu et al., Sci. Rep. 13, 10167 (2023). The paper does NOT specify epochs, learning rate or batch
+# size; the values below (2000 / 1e-3 / 32) were chosen arbitrarily (not tuned).
+name: default
+seed: 42
+split: lodo            # lodo (leave-one-device-out = paper's "out-of-sample") | in_sample
+device: auto           # auto | cpu | cuda | mps
+output_dir: results
+
+data:
+  raw_dir: data/raw
+  devices: [Device2, Device3, Device4, Device5]
+  envelope_block: 10000
+  failure_frac: 0.8
+  chunk_size: 125000
+  n_single_blocks: {Device2: 1, Device3: 1, Device4: 1, Device5: 2}   # not in the paper; determined from the dataset's record structure
+  per_device_standardize: true    # paper: standardise; done per device (paper is silent, author's choice)
+  smoothing: ema                  # paper: EMA ...
+  ema_span: 15                    # ... with span 15
+  window: 10                      # paper: s = 10
+  insample_group: 5               # paper: "for every 5 samples, the last one" is test
+  insample_block_size: 1
+  insample_purge: 0
+
+model:
+  input_size: 1
+  hidden_size: 80                 # paper: 80 recurrent units
+  head_size: 10                   # paper: 10 units ...
+  activation: tanh                # ... with tanh (Eq. 3); the notebook used relu
+
+loss:
+  name: mse             # mse | pinn
+  alpha: 0.1
+  beta: 1.0
+  gamma: 0.1
+
+train:
+  epochs: 2000
+  lr: 1.0e-3
+  batching: minibatch   # minibatch | device_sequence (one time-ordered batch per device)
+  batch_size: 32
+  eval_batch_size: 256
+  shuffle: true
+  shuffle_devices: false
+  grad_clip: null
+  log_every: 100

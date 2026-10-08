@@ -1,4 +1,4 @@
-# PINN-IGBT-RUL
+# pinn-igbt-rul
 
 **Physics-informed RNN for Remaining Useful Life (RUL) estimation of IGBTs** on the NASA IGBT accelerated-aging data.
 
